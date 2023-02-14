@@ -11,7 +11,7 @@ function submitForm() {
 
   $.ajax({
     type: "POST",
-    url: "https://<api-gateway-endpoint>/myLambdaFunction",
+    url: "https://<api-gateway-endpoint>/compassAmplify",
     dataType: "json",
     contentType: "application/json",
     data: JSON.stringify(data),
