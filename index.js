@@ -11,7 +11,7 @@ function submitForm() {
 
   $.ajax({
     type: "POST",
-    url: "https://<api-gateway-endpoint>/compassAmplify",
+    url: "https://6kjae2ai40.execute-api.us-east-1.amazonaws.com/default/compassAmplify",
     dataType: "json",
     contentType: "application/json",
     data: JSON.stringify(data),
