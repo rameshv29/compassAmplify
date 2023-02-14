@@ -11,7 +11,7 @@ function submitForm() {
 
   $.ajax({
     type: "POST",
-    url: "https://<api-gateway-endpoint>/prod/myLambdaFunction",
+    url: "https://<api-gateway-endpoint>/default/myLambdaFunction",
     dataType: "json",
     contentType: "application/json",
     data: JSON.stringify(data),
