@@ -4,9 +4,9 @@ function submitForm() {
   const password = document.getElementById("password").value;
 
   const data = {
-    serverip,
-    username,
-    password
+    "serverip" : serverip,
+    "username" : username,
+    "password" : password
   };
 
   fetch("https://6kjae2ai40.execute-api.us-east-1.amazonaws.com/default/compassAmplify", {
