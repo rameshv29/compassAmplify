@@ -15,8 +15,8 @@
     <label for="password">Password:</label>
     <input type="password" id="password" name="password"><br>
 
-    <label for="database">Database:</label>
-    <input type="text" id="database" name="database"><br>
+    <label for="databases">Databases:</label>
+    <input type="text" id="databases" name="databases"><br>
 
     <input type="submit" value="Submit">
   </form>
@@ -28,14 +28,14 @@
       const serverip = document.getElementById('serverip').value;
       const username = document.getElementById('username').value;
       const password = document.getElementById('password').value;
-      const database = document.getElementById('database').value;
+      const databases = document.getElementById('databases').value;
       const url = 'https://244eg7anmc.execute-api.us-east-1.amazonaws.com/dev/job';
 
       const data = {
         serverip: serverip,
         username: username,
         password: password,
-        database: database
+        databases: databases
       };
 
       fetch(url, {
