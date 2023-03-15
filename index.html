@@ -1,36 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Babelfish Compass AutoDDL</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Babelfish Compass AutoDDL</title>
 </head>
 <body>
-	<h1>My Amplify App</h1>
-	<form id="input-form">
-		<label for="server-ip">Server IP:</label>
-		<input type="text" id="server-ip" required><br>
+  <form id="myForm">
+    <label for="serverip">Server IP:</label>
+    <input type="text" id="serverip" name="serverip"><br>
 
-		<label for="login-name">Login Name:</label>
-		<input type="text" id="login-name" required><br>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"><br>
 
-		<label for="password">Password:</label>
-		<input type="password" id="password" required><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br>
 
-		<label for="databases">Databases:</label>
-		<input type="text" id="databases" required><br>
+    <label for="database">Database:</label>
+    <input type="text" id="database" name="database"><br>
 
-		<label for="bucket-name">Bucket Name:</label>
-		<input type="text" id="bucket-name" required><br>
+    <input type="submit" value="Submit">
+  </form>
 
-		<input type="submit" value="Submit" id="submit-button">
-	</form>
+  <script>
+    const form = document.getElementById('myForm');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const serverip = document.getElementById('serverip').value;
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const database = document.getElementById('database').value;
+      const url = 'https://244eg7anmc.execute-api.us-east-1.amazonaws.com/dev/job';
 
-	<button id="check-status-button" disabled>Check Status</button>
-	<button id="download-button" disabled>Download</button>
+      const data = {
+        serverip: serverip,
+        username: username,
+        password: password,
+        database: database
+      };
 
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="amplify.js"></script>
+      fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    });
+  </script>
 </body>
 </html>
