@@ -96,6 +96,7 @@
                   console.log('Download:', data);
                   const downloadLink = document.createElement('a');
                   downloadLink.href = data.url;
+				  downloadLink.setAttribute('target', '_blank');
                   downloadLink.setAttribute('download', '');
                   downloadLink.click();
                 })
