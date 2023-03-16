@@ -1,11 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>My Form</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <title>Babelfish Compass AutoDDL</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      form {
+        display: inline-block;
+        text-align: left;
+      }
+      label {
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+        margin-right: 20px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 200px;
+      }
+      input[type="submit"],
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover,
+      button:hover {
+        background-color: #3e8e41;
+      }
+      button:disabled {
+        background-color: #aaaaaa;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
 <body>
-  <form id="myForm">
+  <h1>Babelfish Compass AutoDDL</h1>
+  <br>
+  <form id="compassAutoDDL">
     <label for="serverip">Server IP:</label>
     <input type="text" id="serverip" name="serverip"><br>
 
@@ -28,7 +68,7 @@
   <button id="download" disabled>Download Report</button>
 
   <script>
-    const form = document.getElementById('myForm');
+    const form = document.getElementById('compassAutoDDL');
     const checkstatus = document.getElementById('checkstatus');
     const download = document.getElementById('download');
     const statusDiv = document.getElementById('status');
